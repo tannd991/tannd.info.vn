@@ -331,6 +331,82 @@
         margin: auto;
       }
     }
+    /* Floating Call Button */
+    .phone-ring {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .phone-btn {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--neon), var(--neon-2));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+      color: #020617;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .phone-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(0, 245, 255, 0.7);
+    }
+    .phone-btn svg {
+      width: 26px;
+      height: 26px;
+      fill: currentColor;
+    }
+    .phone-pulse {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 245, 255, 0.3);
+      border-radius: 50%;
+      z-index: -1;
+      animation: pulse-ring 1.8s infinite ease-out;
+    }
+    .phone-pulse-2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(139, 92, 246, 0.3);
+      border-radius: 50%;
+      z-index: -1;
+      animation: pulse-ring 1.8s infinite ease-out 0.9s;
+    }
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1.8);
+        opacity: 0;
+      }
+    }
+    /* Responsive adjustment for phone button on small screens */
+    @media (max-width: 600px) {
+      .phone-ring {
+        bottom: 20px;
+        right: 20px;
+      }
+      .phone-btn {
+        width: 50px;
+        height: 50px;
+      }
+      .phone-btn svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -467,5 +543,15 @@
       });
     });
   </script>
+  <!-- Floating Call Button -->
+  <a href="tel:+84772219688" class="phone-ring" aria-label="Call Now">
+    <div class="phone-pulse"></div>
+    <div class="phone-pulse-2"></div>
+    <div class="phone-btn">
+      <svg viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.149 15.149 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </div>
+  </a>
 </body>
 </html>
