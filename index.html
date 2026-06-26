@@ -328,6 +328,13 @@
         align-items: center;
         text-align: center;
         padding: 40px 0;
+        min-height: auto;
+      }
+      h1 {
+        font-size: clamp(2.2rem, 9vw, 3.5rem);
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+        margin-bottom: 16px;
       }
       .avatar-card {
         order: -1;
@@ -336,6 +343,11 @@
       }
       .actions {
         justify-content: center;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: none !important;
       }
     }
     /* Floating Call Button */
