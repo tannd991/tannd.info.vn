@@ -428,6 +428,201 @@
         height: 22px;
       }
     }
+
+    /* Skills section styling */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .skill-card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+    .skill-card:hover {
+      border-color: var(--border);
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+    .skill-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 16px;
+      color: var(--neon);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .skill-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill-badge {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      color: var(--text);
+      transition: all 0.25s ease;
+    }
+    .skill-badge:hover {
+      background: rgba(0, 245, 255, 0.08);
+      border-color: var(--neon);
+      color: var(--neon);
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 40px auto 0;
+      padding-left: 30px;
+      border-left: 2px solid rgba(0, 245, 255, 0.2);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 48px;
+    }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -41px;
+      top: 6px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--neon), var(--neon-2));
+      border: 4px solid var(--bg);
+      box-shadow: 0 0 10px var(--neon);
+    }
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .timeline-title h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .timeline-title h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--neon);
+      margin-top: 4px;
+    }
+    .timeline-date {
+      font-size: 0.9rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      color: #c084fc;
+      font-weight: 600;
+    }
+    .timeline-body ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .timeline-body li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .timeline-body li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--neon);
+      font-weight: bold;
+    }
+
+    /* Education & Certifications */
+    .edu-cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 24px;
+    }
+    @media (max-width: 900px) {
+      .edu-cert-grid {
+        grid-template-columns: 1fr;
+      }
+      .timeline {
+        padding-left: 20px;
+      }
+      .timeline-dot {
+        left: -31px;
+      }
+    }
+    .edu-card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      padding: 32px;
+      height: 100%;
+    }
+    .edu-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+    .edu-item {
+      border-left: 2px solid var(--neon-2);
+      padding-left: 20px;
+      margin-left: 4px;
+    }
+    .edu-item h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .edu-item p {
+      color: var(--muted);
+      margin-top: 6px;
+      font-size: 0.95rem;
+    }
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      margin-bottom: 12px;
+      transition: all 0.3s ease;
+    }
+    .cert-item:hover {
+      border-color: var(--border);
+      background: rgba(0, 245, 255, 0.04);
+      transform: translateX(4px);
+    }
+    .cert-icon {
+      font-size: 1.8rem;
+    }
+    .cert-info h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .cert-info p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
   </style>
 </head>
 <body>
@@ -441,10 +636,12 @@
         </button>
         <a href="/" class="logo">DuyTân<span>.</span>info</a>
         <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#contact">Contact</a>
+          <a href="#about">Giới thiệu</a>
+          <a href="#skills">Kỹ năng</a>
+          <a href="#experience">Kinh nghiệm</a>
+          <a href="#portfolio">Dự án</a>
+          <a href="#education">Học vấn & Chứng chỉ</a>
+          <a href="#contact">Liên hệ</a>
         </div>
         <div class="nav-spacer"></div>
       </nav>
@@ -453,11 +650,10 @@
   <main>
     <section class="hero container">
       <div class="reveal">
-        <div class="badge">IT Services Desk • Information System</div>
-        <h1>Nguyễn Duy <span>Tân</span></h1>
+        <div class="badge">IT Helpdesk & Network • System Administrator</div>
+        <h1 style="white-space: nowrap;">Nguyễn Duy <span>Tân</span></h1>
         <p class="tagline">
-          Chuyên gia IT Services Desk hỗ trợ doanh nghiệp vận hành hệ thống CNTT ổn định,
-          bảo mật và hiệu quả hơn bằng tư duy hệ thống, tự động hóa và dịch vụ chuyên nghiệp.
+          Chuyên viên IT với hơn 4 năm kinh nghiệm thực chiến trong hỗ trợ kỹ thuật (IT Helpdesk L1/L2/L3), quản trị hệ thống mạng (Network Administration) và tổ chức hạ tầng CNTT tối ưu cho doanh nghiệp.
         </p>
         <div class="actions">
           <a href="#contact" class="btn btn-primary">Liên hệ ngay</a>
@@ -468,54 +664,223 @@
         <div class="avatar"></div>
       </div>
     </section>
+    
     <section id="about" class="container reveal">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title">Giới thiệu</h2>
       <p class="section-desc">
-        Tôi phụ trách các mảng IT Support, Network, Server, Backup dữ liệu và các hệ thống phần mềm nội bộ.
-        Mục tiêu của tôi là giúp doanh nghiệp giảm sự cố, tối ưu quy trình và nâng cao trải nghiệm người dùng.
+        Tôi là chuyên viên IT với hơn 4 năm kinh nghiệm trong lĩnh vực Hỗ trợ kỹ thuật, Quản trị hệ thống mạng và Tổ chức hạ tầng công nghệ thông tin cho doanh nghiệp. Có khả năng giao tiếp tốt, tư duy dịch vụ khách hàng cao, luôn chủ động giải quyết vấn đề nhằm đảm bảo tính liên tục của hoạt động kinh doanh.
       </p>
-    </section>
-    <section id="services" class="container reveal">
-      <h2 class="section-title">My Services</h2>
-      <p class="section-desc">Ba nhóm dịch vụ chính dành cho doanh nghiệp vừa và nhỏ.</p>
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="icon">🛠️</div>
-          <h3>IT Support</h3>
-          <p>Hỗ trợ người dùng, xử lý lỗi máy tính, phần mềm, email, máy in và các sự cố vận hành hằng ngày.</p>
-        </div>
+      
+      <div class="grid grid-2" style="margin-top: 32px;">
         <div class="card">
           <div class="icon">🌐</div>
-          <h3>Network & Server</h3>
-          <p>Thiết lập, quản trị hệ thống mạng, máy chủ, phân quyền truy cập, backup và giám sát hệ thống.</p>
+          <h3>Quản trị & Tối ưu Mạng</h3>
+          <p>Cấu hình & quản lý thiết bị mạng (Router, Switch, Firewall, AP) Cisco, MikroTik, Fortinet, Aruba. Thiết lập VLAN, VPN bảo mật, chính sách định tuyến.</p>
         </div>
         <div class="card">
-          <div class="icon">⚡</div>
-          <h3>IT Automation</h3>
-          <p>Tự động hóa quy trình IT, quản lý yêu cầu, báo cáo, cảnh báo sự cố và tối ưu vận hành nội bộ.</p>
+          <div class="icon">🖥️</div>
+          <h3>Tổ chức & Quản lý Hệ thống</h3>
+          <p>Vận hành Active Directory, Windows Server, Office 365, ảo hóa (VMware ESXi, Hyper-V) và phân quyền tài nguyên hệ thống khoa học, bảo mật.</p>
+        </div>
+        <div class="card">
+          <div class="icon">💾</div>
+          <h3>Lập kế hoạch & Sao lưu</h3>
+          <p>Xây dựng checklist bảo trì định kỳ hệ thống máy chủ, mạng, UPS và kế hoạch sao lưu dữ liệu tự động (quy tắc backup 3-2-1) với Veeam, Synology.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤝</div>
+          <h3>Quy trình & Hỗ trợ chuẩn ITIL</h3>
+          <p>Xử lý sự cố phần cứng, phần mềm áp lực cao. Thiết lập tài liệu quy trình vận hành SOPs, quản lý ticket qua Jira Service Desk, Zendesk.</p>
         </div>
       </div>
     </section>
+
+    <section id="skills" class="container reveal">
+      <h2 class="section-title">Kỹ năng cốt lõi</h2>
+      <p class="section-desc">Các nhóm kỹ năng công nghệ và nghiệp vụ chuyên môn chính.</p>
+      
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>🌐 Hạ tầng Mạng (Network)</h3>
+          <div class="skill-badges">
+            <span class="skill-badge">Routing & Switching</span>
+            <span class="skill-badge">VLAN</span>
+            <span class="skill-badge">VPN (IPsec/SSL)</span>
+            <span class="skill-badge">NAT</span>
+            <span class="skill-badge">ACL</span>
+            <span class="skill-badge">Cisco</span>
+            <span class="skill-badge">MikroTik</span>
+            <span class="skill-badge">Fortinet</span>
+            <span class="skill-badge">Sophos</span>
+            <span class="skill-badge">Aruba Wifi</span>
+            <span class="skill-badge">PRTG</span>
+            <span class="skill-badge">Zabbix</span>
+            <span class="skill-badge">Nagios</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>🖥️ Hệ thống & Dịch vụ Cloud</h3>
+          <div class="skill-badges">
+            <span class="skill-badge">Windows Server</span>
+            <span class="skill-badge">Active Directory</span>
+            <span class="skill-badge">DHCP / DNS / File Server</span>
+            <span class="skill-badge">Group Policy</span>
+            <span class="skill-badge">Microsoft 365 (O365)</span>
+            <span class="skill-badge">Azure AD</span>
+            <span class="skill-badge">Google Workspace</span>
+            <span class="skill-badge">VMware ESXi / vSphere</span>
+            <span class="skill-badge">Hyper-V</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>🛠️ IT Helpdesk & Hỗ trợ</h3>
+          <div class="skill-badges">
+            <span class="skill-badge">Hỗ trợ Phần cứng & Phần mềm</span>
+            <span class="skill-badge">Windows & macOS</span>
+            <span class="skill-badge">Printer / IP Phone / CCTV</span>
+            <span class="skill-badge">Quy trình ITIL</span>
+            <span class="skill-badge">Jira Service Desk</span>
+            <span class="skill-badge">Zendesk</span>
+            <span class="skill-badge">GLPI</span>
+            <span class="skill-badge">OS Imaging</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>📅 Tổ chức & Lập kế hoạch</h3>
+          <div class="skill-badges">
+            <span class="skill-badge">Checklist bảo trì thiết bị/server</span>
+            <span class="skill-badge">Quy tắc backup 3-2-1</span>
+            <span class="skill-badge">Veeam Backup</span>
+            <span class="skill-badge">Synology NAS</span>
+            <span class="skill-badge">Quản lý & Kiểm kê tài sản IT</span>
+          </div>
+        </div>
+
+        <div class="skill-card" style="grid-column: 1 / -1;">
+          <h3>🤝 Kỹ năng mềm</h3>
+          <div class="skill-badges">
+            <span class="skill-badge">Giải quyết sự cố dưới áp lực cao (Troubleshooting under pressure)</span>
+            <span class="skill-badge">Lập tài liệu vận hành tiêu chuẩn (SOP - Standard Operating Procedure)</span>
+            <span class="skill-badge">Lập tài liệu hướng dẫn người dùng tự khắc phục lỗi cơ bản</span>
+            <span class="skill-badge">Làm việc nhóm & Quản lý thời gian</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="container reveal">
+      <h2 class="section-title">Kinh nghiệm làm việc</h2>
+      <p class="section-desc">Quá trình công tác và đóng góp chuyên môn tại các doanh nghiệp.</p>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-title">
+              <h3>Công ty Cổ phần Công nghệ ABC</h3>
+              <h4>Chuyên viên Quản trị Hệ thống & Mạng (Network & System Admin)</h4>
+            </div>
+            <span class="timeline-date">06/2024 - Hiện tại</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li><strong>Quản trị hạ tầng mạng & Bảo mật:</strong> Thiết kế, triển khai và tối ưu hóa hệ thống mạng văn phòng (quy mô 200+ nhân sự). Chia VLAN phòng ban, cấu hình chính sách bảo mật và định tuyến trên Firewall Fortigate, VPN Client-to-Site và Site-to-Site phục vụ cho nhân sự làm việc từ xa kết nối an toàn.</li>
+              <li><strong>Tổ chức hệ thống & Backup:</strong> Quản trị hệ thống Active Directory, phân quyền truy cập File Server theo phòng ban bảo mật. Lập kế hoạch & sao lưu tự động hàng ngày/hàng tuần cho máy chủ & cơ sở dữ liệu quan trọng, định kỳ kiểm tra tính toàn vẹn của dữ liệu backup hàng tháng.</li>
+              <li><strong>Lập kế hoạch & Quản lý:</strong> Thực hiện kế hoạch bảo trì định kỳ (Preventive Maintenance) hệ thống server, UPS, switch/router hàng quý, giúp giảm thiểu 95% thời gian gián đoạn hệ thống. Xây dựng tài liệu quy trình vận hành SOPs cho phòng IT và tài liệu hướng dẫn người dùng mới.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-title">
+              <h3>Công ty TNHH Giải pháp Dịch vụ XYZ</h3>
+              <h4>Nhân viên IT Helpdesk & Hỗ trợ Kỹ thuật L2</h4>
+            </div>
+            <span class="timeline-date">01/2022 - 05/2024</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li><strong>Hỗ trợ người dùng (Helpdesk Support):</strong> Tiếp nhận & xử lý trung bình 30-40 ticket mỗi ngày liên quan đến lỗi OS (Windows/macOS), phần mềm (Office 365), kết nối mạng, máy in, tổng đài IP và camera CCTV. CSAT luôn đạt trên 95% và phản hồi/xử lý đáp ứng đúng cam kết SLA.</li>
+              <li><strong>Tổ chức & Quản lý hạ tầng IT:</strong> Quản lý vòng đời thiết bị IT từ mua sắm, cài đặt (cấu hình ảnh hệ điều hành chuẩn - OS Imaging để bàn giao nhanh), cấp phát, bảo hành đến thanh lý. Thiết lập sơ đồ mạng văn phòng, quản lý bản quyền phần mềm đang hoạt động.</li>
+              <li><strong>Lập kế hoạch làm việc:</strong> Lên lịch kiểm tra định kỳ hàng tuần phòng họp trực tuyến (Teams/Zoom Room), camera giám sát, thiết bị Wifi. Đề xuất phương án và lập kế hoạch nâng cấp RAM, SSD cho máy cũ giúp tăng hiệu suất nhân viên và tối ưu chi phí.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="portfolio" class="container reveal">
-      <h2 class="section-title">Portfolio</h2>
-      <p class="section-desc">Một số hạng mục tiêu biểu có thể triển khai cho doanh nghiệp.</p>
+      <h2 class="section-title">Dự án tiêu biểu</h2>
+      <p class="section-desc">Các dự án hạ tầng & phần mềm đã trực tiếp triển khai đạt hiệu quả cao.</p>
       <div class="grid grid-2">
         <div class="card">
-          <div class="portfolio-img">Helpdesk System</div>
-          <h3>Hệ thống quản lý yêu cầu IT</h3>
-          <p>Quản lý ticket, phân loại lỗi, theo dõi SLA và báo cáo hiệu suất hỗ trợ.</p>
+          <div class="portfolio-img">O365 Migration</div>
+          <h3>Di cư Hệ thống Email lên Microsoft 365 (O365 Migration)</h3>
+          <p style="color: var(--neon); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">Vai trò: Thành viên cốt lõi phụ trách lập kế hoạch & hỗ trợ</p>
+          <p>Chuyển đổi thành công hơn 150 tài khoản email từ Mail Server vật lý cũ lên Cloud Microsoft 365 mà không làm gián đoạn luồng gửi/nhận thư của doanh nghiệp. Hướng dẫn và cấu hình Outlook, Teams trên máy tính và điện thoại cho nhân sự.</p>
         </div>
         <div class="card">
-          <div class="portfolio-img">Backup Solution</div>
-          <h3>Giải pháp sao lưu dữ liệu</h3>
-          <p>Thiết kế quy trình backup, kiểm tra dữ liệu định kỳ và giảm rủi ro mất mát thông tin.</p>
+          <div class="portfolio-img">Jira Service Desk</div>
+          <h3>Tối ưu hóa Quy trình Quản lý Sự cố IT</h3>
+          <p style="color: var(--neon); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">Vai trò: Trưởng nhóm dự án</p>
+          <p>Thiết kế lại quy trình tiếp nhận sự cố bằng công cụ Jira Service Desk. Phân loại sự cố theo mức độ ưu tiên (P1 to P4) rõ ràng, giúp giảm thời gian chờ đợi xử lý của người dùng xuống 30% và nâng cao tính minh bạch công việc phòng IT.</p>
         </div>
       </div>
     </section>
+
+    <section id="education" class="container reveal">
+      <h2 class="section-title">Học vấn & Chứng chỉ</h2>
+      <p class="section-desc">Nền tảng đào tạo chính quy và các chứng chỉ kỹ thuật chuyên môn.</p>
+      
+      <div class="edu-cert-grid">
+        <div class="edu-card">
+          <h3>Học vấn chính quy</h3>
+          <div class="edu-item">
+            <h4>Cử nhân Công nghệ Thông tin</h4>
+            <p>Trường Đại học Bách Khoa / Công nghiệp</p>
+            <p style="color: var(--neon); font-size: 0.95rem; font-weight: 600; margin-top: 4px;">Niên khóa: 2018 - 2022</p>
+          </div>
+        </div>
+        
+        <div class="edu-card">
+          <h3>Chứng chỉ chuyên môn</h3>
+          
+          <div class="cert-item">
+            <div class="cert-icon">🏆</div>
+            <div class="cert-info">
+              <h4>Cisco Certified Network Associate (CCNA)</h4>
+              <p>Năm đạt: 2022</p>
+            </div>
+          </div>
+          
+          <div class="cert-item">
+            <div class="cert-icon">💻</div>
+            <div class="cert-info">
+              <h4>MCSA: Windows Server 2016</h4>
+              <p>Năm đạt: 2023</p>
+            </div>
+          </div>
+          
+          <div class="cert-item">
+            <div class="cert-icon">⚙️</div>
+            <div class="cert-info">
+              <h4>ITIL v4 Foundation</h4>
+              <p>Quản lý dịch vụ CNTT • Năm đạt: 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="container reveal">
       <div class="contact-box">
-        <h2 class="section-title">Let’s Work Together</h2>
-        <p>Bạn cần tối ưu hệ thống IT cho doanh nghiệp? Hãy kết nối để trao đổi giải pháp phù hợp.</p>
+        <h2 class="section-title">Kết nối làm việc</h2>
+        <p>Bạn cần tối ưu hạ tầng IT, mạng, hệ thống hay quy trình hỗ trợ Helpdesk cho doanh nghiệp? Hãy kết nối với tôi.</p>
         <a href="mailto:duytan@tannd.info.vn" class="btn btn-primary">duytan@tannd.info.vn</a>
       </div>
     </section>
