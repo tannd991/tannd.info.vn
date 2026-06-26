@@ -1,0 +1,9 @@
+# Ignore Word documents
+CV_IT_Helpdesk_Network.docx
+
+# Vercel deployment metadata
+.vercel/
+
+# Temporary and backup files
+*.bak
+*.log

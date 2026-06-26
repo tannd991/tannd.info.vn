@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nguyễn Duy Tân | IT Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050816;
+      --card: rgba(255, 255, 255, 0.06);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --neon: #00f5ff;
+      --neon-2: #8b5cf6;
+      --border: rgba(0, 245, 255, 0.25);
+      --shadow: 0 0 35px rgba(0, 245, 255, 0.18);
+      --radius: 24px;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(0, 245, 255, 0.18), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.2), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(5, 8, 22, 0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+    .logo span {
+      color: var(--neon);
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .nav-links a:hover {
+      color: var(--neon);
+    }
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 48px;
+      padding: 70px 0;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--neon);
+      background: rgba(0, 245, 255, 0.08);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.08em;
+      margin-bottom: 24px;
+    }
+    h1 span {
+      background: linear-gradient(90deg, var(--neon), var(--neon-2));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .tagline {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 32px;
+    }
+    .actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: 0.25s;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--neon), var(--neon-2));
+      color: #020617;
+      box-shadow: var(--shadow);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+    .avatar-card {
+      position: relative;
+      padding: 20px;
+      border-radius: 34px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .avatar-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 36px;
+      background: linear-gradient(135deg, var(--neon), transparent, var(--neon-2));
+      z-index: -1;
+      filter: blur(18px);
+      opacity: 0.45;
+    }
+    .avatar {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 26px;
+      background:
+        linear-gradient(135deg, rgba(0,245,255,0.3), rgba(139,92,246,0.35)),
+        url("https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop");
+      background-size: cover;
+      background-position: center;
+    }
+    section {
+      padding: 90px 0;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.06em;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 36px;
+    }
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .card {
+      padding: 28px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+      transition: 0.3s;
+    }
+    .card:hover {
+      border-color: var(--border);
+      box-shadow: var(--shadow);
+      transform: translateY(-6px);
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+    .card p {
+      color: var(--muted);
+    }
+    .icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(0,245,255,0.1);
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+    }
+    .portfolio-img {
+      height: 220px;
+      border-radius: 18px;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, rgba(0,245,255,0.22), rgba(139,92,246,0.25));
+      border: 1px solid rgba(255,255,255,0.08);
+      display: grid;
+      place-items: center;
+      color: var(--neon);
+      font-weight: 800;
+    }
+    .contact-box {
+      text-align: center;
+      padding: 48px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, rgba(0,245,255,0.1), rgba(139,92,246,0.12));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .contact-box p {
+      color: var(--muted);
+      margin: 14px 0 28px;
+    }
+    footer {
+      padding: 28px 0;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.7s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 900px) {
+      .hero,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: 40px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .avatar-card {
+        max-width: 420px;
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">DuyTân<span>.</span></div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero container">
+      <div class="reveal">
+        <div class="badge">IT Services Desk • Information System</div>
+        <h1>Nguyễn Duy <span>Tân</span></h1>
+        <p class="tagline">
+          Chuyên gia IT Services Desk hỗ trợ doanh nghiệp vận hành hệ thống CNTT ổn định,
+          bảo mật và hiệu quả hơn bằng tư duy hệ thống, tự động hóa và dịch vụ chuyên nghiệp.
+        </p>
+        <div class="actions">
+          <a href="#contact" class="btn btn-primary">Liên hệ ngay</a>
+          <a href="#portfolio" class="btn btn-secondary">Xem dự án</a>
+        </div>
+      </div>
+      <div class="avatar-card reveal">
+        <div class="avatar"></div>
+      </div>
+    </section>
+    <section id="about" class="container reveal">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-desc">
+        Tôi phụ trách các mảng IT Support, Network, Server, Backup dữ liệu và các hệ thống phần mềm nội bộ.
+        Mục tiêu của tôi là giúp doanh nghiệp giảm sự cố, tối ưu quy trình và nâng cao trải nghiệm người dùng.
+      </p>
+    </section>
+    <section id="services" class="container reveal">
+      <h2 class="section-title">My Services</h2>
+      <p class="section-desc">Ba nhóm dịch vụ chính dành cho doanh nghiệp vừa và nhỏ.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon">🛠️</div>
+          <h3>IT Support</h3>
+          <p>Hỗ trợ người dùng, xử lý lỗi máy tính, phần mềm, email, máy in và các sự cố vận hành hằng ngày.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🌐</div>
+          <h3>Network & Server</h3>
+          <p>Thiết lập, quản trị hệ thống mạng, máy chủ, phân quyền truy cập, backup và giám sát hệ thống.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⚡</div>
+          <h3>IT Automation</h3>
+          <p>Tự động hóa quy trình IT, quản lý yêu cầu, báo cáo, cảnh báo sự cố và tối ưu vận hành nội bộ.</p>
+        </div>
+      </div>
+    </section>
+    <section id="portfolio" class="container reveal">
+      <h2 class="section-title">Portfolio</h2>
+      <p class="section-desc">Một số hạng mục tiêu biểu có thể triển khai cho doanh nghiệp.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="portfolio-img">Helpdesk System</div>
+          <h3>Hệ thống quản lý yêu cầu IT</h3>
+          <p>Quản lý ticket, phân loại lỗi, theo dõi SLA và báo cáo hiệu suất hỗ trợ.</p>
+        </div>
+        <div class="card">
+          <div class="portfolio-img">Backup Solution</div>
+          <h3>Giải pháp sao lưu dữ liệu</h3>
+          <p>Thiết kế quy trình backup, kiểm tra dữ liệu định kỳ và giảm rủi ro mất mát thông tin.</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="container reveal">
+      <div class="contact-box">
+        <h2 class="section-title">Let’s Work Together</h2>
+        <p>Bạn cần tối ưu hệ thống IT cho doanh nghiệp? Hãy kết nối để trao đổi giải pháp phù hợp.</p>
+        <a href="mailto:yourmail@example.com" class="btn btn-primary">yourmail@example.com</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    © 2026 Nguyễn Duy Tân. All rights reserved.
+  </footer>
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+    function revealOnScroll() {
+      reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 120;
+        if (elementTop < windowHeight - revealPoint) {
+          el.classList.add("active");
+        }
+      });
+    }
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
