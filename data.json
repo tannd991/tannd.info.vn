@@ -1,0 +1,130 @@
+{
+  "siteMeta": {
+    "title": "Nguyễn Duy Tân | IT Services",
+    "logo": "DuyTân",
+    "logoHighlight": ".",
+    "footerText": "© 2026 Nguyễn Duy Tân. All rights reserved."
+  },
+  "hero": {
+    "badge": "IT Helpdesk & Network • System Administrator",
+    "namePrefix": "Nguyễn Duy ",
+    "nameHighlight": "Tân",
+    "tagline": "Chuyên viên IT với hơn 4 năm kinh nghiệm thực chiến trong hỗ trợ kỹ thuật (IT Helpdesk L1/L2/L3), quản trị hệ thống mạng (Network Administration) và tổ chức hạ tầng CNTT tối ưu cho doanh nghiệp.",
+    "avatar": "avatar_centered.jpg"
+  },
+  "about": {
+    "description": "Tôi là chuyên viên IT với hơn 4 năm kinh nghiệm trong lĩnh vực Hỗ trợ kỹ thuật, Quản trị hệ thống mạng và Tổ chức hạ tầng công nghệ thông tin cho doanh nghiệp. Có khả năng giao tiếp tốt, tư duy dịch vụ khách hàng cao, luôn chủ động giải quyết vấn đề nhằm đảm bảo tính liên tục của hoạt động kinh doanh.",
+    "cards": [
+      {
+        "icon": "🌐",
+        "title": "Quản trị & Tối ưu Mạng",
+        "description": "Cấu hình & quản lý thiết bị mạng (Router, Switch, Firewall, AP) Cisco, MikroTik, Fortinet, Aruba. Thiết lập VLAN, VPN bảo mật, chính sách định tuyến."
+      },
+      {
+        "icon": "🖥️",
+        "title": "Tổ chức & Quản lý Hệ thống",
+        "description": "Vận hành Active Directory, Windows Server, Office 365, ảo hóa (VMware ESXi, Hyper-V) và phân quyền tài nguyên hệ thống khoa học, bảo mật."
+      },
+      {
+        "icon": "💾",
+        "title": "Lập kế hoạch & Sao lưu",
+        "description": "Xây dựng checklist bảo trì định kỳ hệ thống máy chủ, mạng, UPS và kế hoạch sao lưu dữ liệu tự động (quy tắc backup 3-2-1) với Veeam, Synology."
+      },
+      {
+        "icon": "🤝",
+        "title": "Quy trình & Hỗ trợ chuẩn ITIL",
+        "description": "Xử lý sự cố phần cứng, phần mềm áp lực cao. Thiết lập tài liệu quy trình vận hành SOPs, quản lý ticket qua Jira Service Desk, Zendesk."
+      }
+    ]
+  },
+  "skills": [
+    {
+      "title": "🌐 Hạ tầng Mạng (Network)",
+      "badges": ["Routing & Switching", "VLAN", "VPN (IPsec/SSL)", "NAT", "ACL", "Cisco", "MikroTik", "Fortinet", "Sophos", "Aruba Wifi", "PRTG", "Zabbix", "Nagios"],
+      "fullWidth": false
+    },
+    {
+      "title": "🖥️ Hệ thống & Dịch vụ Cloud",
+      "badges": ["Windows Server", "Active Directory", "DHCP / DNS / File Server", "Group Policy", "Microsoft 365 (O365)", "Azure AD", "Google Workspace", "VMware ESXi / vSphere", "Hyper-V"],
+      "fullWidth": false
+    },
+    {
+      "title": "🛠️ IT Helpdesk & Hỗ trợ",
+      "badges": ["Hỗ trợ Phần cứng & Phần mềm", "Windows & macOS", "Printer / IP Phone / CCTV", "Quy trình ITIL", "Jira Service Desk", "Zendesk", "GLPI", "OS Imaging"],
+      "fullWidth": false
+    },
+    {
+      "title": "📅 Tổ chức & Lập kế hoạch",
+      "badges": ["Checklist bảo trì thiết bị/server", "Quy tắc backup 3-2-1", "Veeam Backup", "Synology NAS", "Quản lý & Kiểm kê tài sản IT"],
+      "fullWidth": false
+    },
+    {
+      "title": "🤝 Kỹ năng mềm",
+      "badges": ["Giải quyết sự cố dưới áp lực cao (Troubleshooting under pressure)", "Lập tài liệu vận hành tiêu chuẩn (SOP - Standard Operating Procedure)", "Lập tài liệu hướng dẫn người dùng tự khắc phục lỗi cơ bản", "Làm việc nhóm & Quản lý thời gian"],
+      "fullWidth": true
+    }
+  ],
+  "experience": [
+    {
+      "company": "Công ty Cổ phần Công nghệ ABC",
+      "role": "Chuyên viên Quản trị Hệ thống & Mạng (Network & System Admin)",
+      "date": "06/2024 - Hiện tại",
+      "tasks": [
+        "<strong>Quản trị hạ tầng mạng & Bảo mật:</strong> Thiết kế, triển khai và tối ưu hóa hệ thống mạng văn phòng (quy mô 200+ nhân sự). Chia VLAN phòng ban, cấu hình chính sách bảo mật và định tuyến trên Firewall Fortigate, VPN Client-to-Site và Site-to-Site phục vụ cho nhân sự làm việc từ xa kết nối an toàn.",
+        "<strong>Tổ chức hệ thống & Backup:</strong> Quản trị hệ thống Active Directory, phân quyền truy cập File Server theo phòng ban bảo mật. Lập kế hoạch & sao lưu tự động hàng ngày/hàng tuần cho máy chủ & cơ sở dữ liệu quan trọng, định kỳ kiểm tra tính toàn vẹn của dữ liệu backup hàng tháng.",
+        "<strong>Lập kế hoạch & Quản lý:</strong> Thực hiện kế hoạch bảo trì định kỳ (Preventive Maintenance) hệ thống server, UPS, switch/router hàng quý, giúp giảm thiểu 95% thời gian gián đoạn hệ thống. Xây dựng tài liệu quy trình vận hành SOPs cho phòng IT và tài liệu hướng dẫn người dùng mới."
+      ]
+    },
+    {
+      "company": "Công ty TNHH Giải pháp Dịch vụ XYZ",
+      "role": "Nhân viên IT Helpdesk & Hỗ trợ Kỹ thuật L2",
+      "date": "01/2022 - 05/2024",
+      "tasks": [
+        "<strong>Hỗ trợ người dùng (Helpdesk Support):</strong> Tiếp nhận & xử lý trung bình 30-40 ticket mỗi ngày liên quan đến lỗi OS (Windows/macOS), phần mềm (Office 365), kết nối mạng, máy in, tổng đài IP và camera CCTV. CSAT luôn đạt trên 95% và phản hồi/xử lý đáp ứng đúng cam kết SLA.",
+        "<strong>Tổ chức & Quản lý hạ tầng IT:</strong> Quản lý vòng đời thiết bị IT từ mua sắm, cài đặt (cấu hình ảnh hệ điều hành chuẩn - OS Imaging để bàn giao nhanh), cấp phát, bảo hành đến thanh lý. Thiết lập sơ đồ mạng văn phòng, quản lý bản quyền phần mềm đang hoạt động.",
+        "<strong>Lập kế hoạch làm việc:</strong> Lên lịch kiểm tra định kỳ hàng tuần phòng họp trực tuyến (Teams/Zoom Room), camera giám sát, thiết bị Wifi. Đề xuất phương án và lập kế hoạch nâng cấp RAM, SSD cho máy cũ giúp tăng hiệu suất nhân viên và tối ưu chi phí."
+      ]
+    }
+  ],
+  "portfolio": [
+    {
+      "imageText": "O365 Migration",
+      "title": "Di cư Hệ thống Email lên Microsoft 365 (O365 Migration)",
+      "role": "Vai trò: Thành viên cốt lõi phụ trách lập kế hoạch & hỗ trợ",
+      "description": "Chuyển đổi thành công hơn 150 tài khoản email từ Mail Server vật lý cũ lên Cloud Microsoft 365 mà không làm gián đoạn luồng gửi/nhận thư của doanh nghiệp. Hướng dẫn và cấu hình Outlook, Teams trên máy tính và điện thoại cho nhân sự."
+    },
+    {
+      "imageText": "Jira Service Desk",
+      "title": "Tối ưu hóa Quy trình Quản lý Sự cố IT",
+      "role": "Vai trò: Trưởng nhóm dự án",
+      "description": "Thiết kế lại quy trình tiếp nhận sự cố bằng công cụ Jira Service Desk. Phân loại sự cố theo mức độ ưu tiên (P1 to P4) rõ ràng, giúp giảm thời gian chờ đợi xử lý của người dùng xuống 30% và nâng cao tính minh bạch công việc phòng IT."
+    }
+  ],
+  "education": {
+    "degree": "Cử nhân Công nghệ Thông tin",
+    "school": "Trường Đại học Bách Khoa / Công nghiệp",
+    "years": "Niên khóa: 2018 - 2022"
+  },
+  "certifications": [
+    {
+      "icon": "🏆",
+      "title": "Cisco Certified Network Associate (CCNA)",
+      "year": "Năm đạt: 2022"
+    },
+    {
+      "icon": "💻",
+      "title": "MCSA: Windows Server 2016",
+      "year": "Năm đạt: 2023"
+    },
+    {
+      "icon": "⚙️",
+      "title": "ITIL v4 Foundation",
+      "year": "Quản lý dịch vụ CNTT • Năm đạt: 2024"
+    }
+  ],
+  "contact": {
+    "description": "Bạn cần tối ưu hạ tầng IT, mạng, hệ thống hay quy trình hỗ trợ Helpdesk cho doanh nghiệp? Hãy kết nối với tôi.",
+    "email": "duytan@tannd.info.vn",
+    "phone": "+84772219688"
+  }
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Duy Tân</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: #141414;
+      --text: #ededed;
+      --muted: #a1a1aa;
+      --border: #27272a;
+      --primary: #ffffff;
+      --accent: #3b82f6;
+      --success: #10b981;
+      --danger: #ef4444;
+      --radius: 12px;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      margin-bottom: 24px;
+    }
+    .panel-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--muted);
+    }
+    input, textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--muted);
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+    }
+    .btn-primary:hover {
+      background: #d4d4d8;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      border-color: var(--muted);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .json-editor {
+      width: 100%;
+      height: 600px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      background: #000;
+      border: 1px solid var(--border);
+      color: #00ff00;
+      padding: 20px;
+      border-radius: var(--radius);
+      white-space: pre;
+      overflow-wrap: normal;
+      overflow-x: auto;
+    }
+    #app-content {
+      display: none;
+    }
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 16px 24px;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .toast.success { border-left: 4px solid var(--success); }
+    .toast.error { border-left: 4px solid var(--danger); }
+    
+    .loading-spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(0,0,0,0.2);
+      border-radius: 50%;
+      border-top-color: currentColor;
+      animation: spin 1s ease-in-out infinite;
+      margin-left: 8px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .badge {
+      font-size: 0.75rem;
+      padding: 2px 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Admin <span>Dashboard</span></h1>
+      <div id="user-info" style="display: none; align-items: center; gap: 16px;">
+        <span style="font-size: 0.9rem; color: var(--muted);" id="repo-display"></span>
+        <button class="btn btn-outline" id="logout-btn" style="padding: 6px 12px; font-size: 0.85rem;">Đăng xuất</button>
+      </div>
+    </header>
+
+    <!-- Login Panel -->
+    <div id="login-panel" class="panel">
+      <div class="panel-title">Đăng nhập GitHub API</div>
+      <p style="color: var(--muted); margin-bottom: 24px; font-size: 0.9rem;">
+        Cung cấp thông tin repository và Personal Access Token (PAT) để cho phép Admin lưu nội dung trực tiếp vào file <code>data.json</code> trên GitHub. Vercel sẽ tự động deploy lại sau mỗi lần lưu.
+      </p>
+      <div class="grid-2">
+        <div class="form-group">
+          <label>GitHub Username</label>
+          <input type="text" id="gh-owner" placeholder="Ví dụ: tannd991" value="tannd991">
+        </div>
+        <div class="form-group">
+          <label>Tên Repository</label>
+          <input type="text" id="gh-repo" placeholder="Ví dụ: tannd.info.vn" value="tannd.info.vn">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Personal Access Token (Cần quyền repo)</label>
+        <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+      </div>
+      <div class="form-group">
+        <label>Tên Branch</label>
+        <input type="text" id="gh-branch" placeholder="main" value="main">
+      </div>
+      <button class="btn btn-primary" id="login-btn">Kết nối & Lấy dữ liệu</button>
+    </div>
+
+    <!-- Main Content Panel -->
+    <div id="app-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <p style="color: var(--muted);">Chỉnh sửa trực tiếp dữ liệu dạng JSON. Đảm bảo đúng cú pháp (không thừa dấu phẩy, dùng ngoặc kép).</p>
+        <button class="btn btn-primary" id="save-btn">Lưu thay đổi & Deploy</button>
+      </div>
+      
+      <div class="panel" style="padding: 0; overflow: hidden;">
+        <textarea id="json-editor" class="json-editor" spellcheck="false"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">
+    <div id="toast-msg"></div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
