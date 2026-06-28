@@ -57,7 +57,7 @@
         "Sophos",
         "Rukus Wifi",
         "Meraki Wifi",
-        "Unifi."
+        "Unifi Wifi."
       ],
       "fullWidth": false
     },
@@ -160,7 +160,7 @@
   "certifications": [
     {
       "icon": "🏆",
-      "title": "Cisco CCNA: Certified Network Associate",
+      "title": "CCNA Cisco: Certified Network Associate",
       "year": "Năm đạt: 2022"
     },
     {
