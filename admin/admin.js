@@ -79,8 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await res.json();
       currentSha = data.sha;
       
-      // Decode base64 content
-      const content = decodeURIComponent(escape(atob(data.content)));
+      // Clean base64 string from newlines/spaces
+      const base64Clean = data.content.replace(/\s/g, '');
+      
+      // Decode base64 content safely for UTF-8
+      const content = decodeURIComponent(atob(base64Clean).split('').map(function(c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
       
       // Format JSON beautifully
       const jsonObj = JSON.parse(content);
@@ -125,7 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
       saveBtn.disabled = true;
 
       // GitHub API requires base64 encoded content
-      const base64Content = btoa(unescape(encodeURIComponent(content)));
+      const base64Content = btoa(encodeURIComponent(content).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+          return String.fromCharCode('0x' + p1);
+      }));
 
       const url = `https://api.github.com/repos/${owner}/${repo}/contents/data.json`;
       
