@@ -16,24 +16,29 @@
     "description": "Tôi là chuyên viên IT gần 10 năm kinh nghiệm trong lĩnh vực Hỗ trợ kỹ thuật, Quản trị hệ thống mạng và Tổ chức hạ tầng công nghệ thông tin cho doanh nghiệp. Có khả năng giao tiếp tốt, tư duy dịch vụ khách hàng cao, luôn chủ động giải quyết vấn đề nhằm đảm bảo tính liên tục của hoạt động kinh doanh.",
     "cards": [
       {
+        "icon": "🛠️",
+        "title": "Xử lý sự cố người dùng",
+        "description": "Hỗ trợ người dùng sử dụng máy tính: cài đặt, xử lý sự cố, lỗi liên quan đến phần mềm, phần cứng, đường truyền Internet, …. Đào tạo, viết tài liệu hướng dẫn sử dụng."
+      },
+      {
         "icon": "🌐",
         "title": "Quản trị & Tối ưu Mạng",
-        "description": "Cấu hình & quản lý thiết bị mạng (Router, Switch, Firewall, AP) Cisco, MikroTik, Fortinet, Aruba. Thiết lập VLAN, VPN bảo mật, chính sách định tuyến."
+        "description": "Cấu hình & quản lý thiết bị mạng [Router, Switch, AP] Cisco, Fortinet, Draytek, Rukus, Unifi Thiết lập VLAN, VPN bảo mật, chính sách định tuyến và các Firewall traffic rules."
       },
       {
         "icon": "🖥️",
         "title": "Tổ chức & Quản lý Hệ thống",
-        "description": "Vận hành Active Directory, Windows Server, Office 365, ảo hóa (VMware ESXi, Hyper-V) và phân quyền tài nguyên hệ thống khoa học, bảo mật."
+        "description": "Vận hành Active Directory, Windows Server, Google Workspace, Office 365, ảo hóa (VMware ESXi, Hyper-V) và phân quyền tài nguyên hệ thống khoa học, bảo mật."
       },
       {
         "icon": "💾",
-        "title": "Lập kế hoạch & Sao lưu",
-        "description": "Xây dựng checklist bảo trì định kỳ hệ thống máy chủ, mạng, UPS và kế hoạch sao lưu dữ liệu tự động (quy tắc backup 3-2-1) với Veeam, Synology."
+        "title": "Lập kế hoạch bảo trì & Sao lưu",
+        "description": "Xây dựng checklist bảo trì định kỳ hệ thống máy chủ, mạng, UPS và kế hoạch sao lưu dữ liệu tự động với Veeam, Uranium Backup, FreeFileSync, SAN/NAS Synology."
       },
       {
         "icon": "🤝",
-        "title": "Quy trình & Hỗ trợ chuẩn ITIL",
-        "description": "Xử lý sự cố phần cứng, phần mềm áp lực cao. Thiết lập tài liệu quy trình vận hành SOPs, quản lý ticket qua Jira Service Desk, Zendesk."
+        "title": "AI Agent & AI Automation",
+        "description": "Tối ưu hóa quy trình làm việc trong công tác:\n- On/Off broading nhân sự.\n- Hỗ trợ người dùng thông qua AI Chatbot.\n- Báo cáo số liệu Dashboard tự động."
       }
     ]
   },
