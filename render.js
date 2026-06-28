@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('data.json')
+  const noCacheUrl = 'data.json?t=' + new Date().getTime();
+  fetch(noCacheUrl)
     .then(res => res.json())
     .then(data => {
       // --- Site Meta ---
@@ -17,7 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (heroH1) heroH1.innerHTML = data.hero.namePrefix + '<span>' + data.hero.nameHighlight + '</span>';
       
       const heroTagline = document.querySelector('.hero .tagline');
-      if (heroTagline) heroTagline.innerHTML = data.hero.tagline;
+      if (heroTagline) {
+        // Replace \n with <br> and escape < > to prevent HTML tag issues like <email>
+        let safeTagline = data.hero.tagline.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        heroTagline.innerHTML = safeTagline.replace(/\n/g, '<br>');
+      }
 
       // --- About ---
       const aboutDesc = document.querySelector('#about .section-desc');
