@@ -28,14 +28,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const aboutDesc = document.querySelector('#about .section-desc');
       if (aboutDesc) aboutDesc.innerHTML = data.about.description;
       
-      const aboutCards = document.querySelectorAll('#about .card');
-      data.about.cards.forEach((c, i) => {
-        if(aboutCards[i]) {
-          aboutCards[i].querySelector('.icon').innerHTML = c.icon;
-          aboutCards[i].querySelector('h3').innerHTML = c.title;
-          aboutCards[i].querySelector('p').innerHTML = c.description;
-        }
-      });
+      const aboutCardsContainer = document.querySelector('#about .grid');
+      if (aboutCardsContainer && data.about.cards) {
+        aboutCardsContainer.innerHTML = '';
+        data.about.cards.forEach(c => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <div class="icon">${c.icon}</div>
+            <h3>${c.title}</h3>
+            <p>${c.description}</p>
+          `;
+          aboutCardsContainer.appendChild(card);
+        });
+      }
 
       // --- Skills ---
       const skillsGrid = document.querySelector('.skills-grid');
