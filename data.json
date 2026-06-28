@@ -32,8 +32,8 @@
       },
       {
         "icon": "💾",
-        "title": "Lập kế hoạch bảo trì & Sao lưu",
-        "description": "Xây dựng checklist bảo trì định kỳ hệ thống máy chủ, mạng, UPS và kế hoạch sao lưu dữ liệu tự động với Veeam, Uranium Backup, FreeFileSync, SAN/NAS Synology."
+        "title": "Lập kế hoạch quản lý & Sao lưu",
+        "description": "Xây dựng checklist bảo trì định kỳ hệ thống máy chủ, mạng, UPS. Chuẩn hóa dữ liệu và kế hoạch sao lưu dữ liệu tự động."
       },
       {
         "icon": "🤝",
