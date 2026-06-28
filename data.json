@@ -40,27 +40,71 @@
   "skills": [
     {
       "title": "🌐 Hạ tầng Mạng (Network)",
-      "badges": ["Routing & Switching", "VLAN", "VPN (IPsec/SSL)", "NAT", "ACL", "Cisco", "MikroTik", "Fortinet", "Sophos", "Aruba Wifi", "PRTG", "Zabbix", "Nagios"],
+      "badges": [
+        "Routing & Switching",
+        "VLAN",
+        "VPN (IPsec/SSL)",
+        "NAT",
+        "ACL",
+        "Cisco",
+        "MikroTik",
+        "Fortinet",
+        "Sophos",
+        "Aruba Wifi",
+        "PRTG",
+        "Zabbix",
+        "Nagios"
+      ],
       "fullWidth": false
     },
     {
       "title": "🖥️ Hệ thống & Dịch vụ Cloud",
-      "badges": ["Windows Server", "Active Directory", "DHCP / DNS / File Server", "Group Policy", "Microsoft 365 (O365)", "Azure AD", "Google Workspace", "VMware ESXi / vSphere", "Hyper-V"],
+      "badges": [
+        "Windows Server",
+        "Active Directory",
+        "DHCP / DNS / File Server",
+        "Group Policy",
+        "Microsoft 365 (O365)",
+        "Azure AD",
+        "Google Workspace",
+        "VMware ESXi / vSphere",
+        "Hyper-V"
+      ],
       "fullWidth": false
     },
     {
       "title": "🛠️ IT Helpdesk & Hỗ trợ",
-      "badges": ["Hỗ trợ Phần cứng & Phần mềm", "Windows & macOS", "Printer / IP Phone / CCTV", "Quy trình ITIL", "Jira Service Desk", "Zendesk", "GLPI", "OS Imaging"],
+      "badges": [
+        "Hỗ trợ Phần cứng & Phần mềm",
+        "Windows & macOS",
+        "Printer / IP Phone / CCTV",
+        "Quy trình ITIL",
+        "Jira Service Desk",
+        "Zendesk",
+        "GLPI",
+        "OS Imaging"
+      ],
       "fullWidth": false
     },
     {
       "title": "📅 Tổ chức & Lập kế hoạch",
-      "badges": ["Checklist bảo trì thiết bị/server", "Quy tắc backup 3-2-1", "Veeam Backup", "Synology NAS", "Quản lý & Kiểm kê tài sản IT"],
+      "badges": [
+        "Checklist bảo trì thiết bị/server",
+        "Quy tắc backup 3-2-1",
+        "Veeam Backup",
+        "Synology NAS",
+        "Quản lý & Kiểm kê tài sản IT"
+      ],
       "fullWidth": false
     },
     {
       "title": "🤝 Kỹ năng mềm",
-      "badges": ["Giải quyết sự cố dưới áp lực cao (Troubleshooting under pressure)", "Lập tài liệu vận hành tiêu chuẩn (SOP - Standard Operating Procedure)", "Lập tài liệu hướng dẫn người dùng tự khắc phục lỗi cơ bản", "Làm việc nhóm & Quản lý thời gian"],
+      "badges": [
+        "Giải quyết sự cố dưới áp lực cao (Troubleshooting under pressure)",
+        "Lập tài liệu vận hành tiêu chuẩn (SOP - Standard Operating Procedure)",
+        "Lập tài liệu hướng dẫn người dùng tự khắc phục lỗi cơ bản",
+        "Làm việc nhóm & Quản lý thời gian"
+      ],
       "fullWidth": true
     }
   ],
