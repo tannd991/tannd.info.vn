@@ -51,14 +51,13 @@
         "VPN (IPsec/SSL)",
         "NAT",
         "ACL",
+        "Monitoring devices",
         "Cisco",
-        "MikroTik",
         "Fortinet",
         "Sophos",
-        "Aruba Wifi",
-        "PRTG",
-        "Zabbix",
-        "Nagios"
+        "Rukus Wifi",
+        "Meraki Wifi",
+        "Unifi."
       ],
       "fullWidth": false
     },
@@ -67,11 +66,13 @@
       "badges": [
         "Windows Server",
         "Active Directory",
-        "DHCP / DNS / File Server",
+        "DHCP / DNS / File Server/ FTP/ HFS",
         "Group Policy",
         "Microsoft 365 (O365)",
         "Azure AD",
         "Google Workspace",
+        "Mail Server",
+        "SaaS",
         "VMware ESXi / vSphere",
         "Hyper-V"
       ],
@@ -83,11 +84,8 @@
         "Hỗ trợ Phần cứng & Phần mềm",
         "Windows & macOS",
         "Printer / IP Phone / CCTV",
-        "Quy trình ITIL",
-        "Jira Service Desk",
-        "Zendesk",
-        "GLPI",
-        "OS Imaging"
+        "Quy trình ITMS",
+        "IT Service Desk"
       ],
       "fullWidth": false
     },
@@ -95,10 +93,14 @@
       "title": "📅 Tổ chức & Lập kế hoạch",
       "badges": [
         "Checklist bảo trì thiết bị/server",
-        "Quy tắc backup 3-2-1",
         "Veeam Backup",
         "Synology NAS",
-        "Quản lý & Kiểm kê tài sản IT"
+        "Quản lý & Kiểm kê tài sản CNTT",
+        "Quản lý dịch vụ phần mềm",
+        "License",
+        "Hosting",
+        "DNS",
+        "Internet"
       ],
       "fullWidth": false
     },
@@ -106,11 +108,12 @@
       "title": "🤝 Kỹ năng mềm",
       "badges": [
         "Giải quyết sự cố dưới áp lực cao (Troubleshooting under pressure)",
-        "Lập tài liệu vận hành tiêu chuẩn (SOP - Standard Operating Procedure)",
+        "Lập kế hoạch trước khi làm việc",
+        "lập tài liệu vận hành tiêu chuẩn (SOP - Standard Operating Procedure)",
         "Lập tài liệu hướng dẫn người dùng tự khắc phục lỗi cơ bản",
         "Làm việc nhóm & Quản lý thời gian"
       ],
-      "fullWidth": false
+      "fullWidth": true
     }
   ],
   "experience": [
@@ -151,24 +154,24 @@
   ],
   "education": {
     "degree": "Cử nhân Công nghệ Thông tin",
-    "school": "Trường Đại học Bách Khoa / Công nghiệp",
-    "years": "Niên khóa: 2018 - 2022"
+    "school": "Đại học FPT Jetking",
+    "years": "Niên khóa: 2013 - 2016"
   },
   "certifications": [
     {
       "icon": "🏆",
-      "title": "Cisco Certified Network Associate (CCNA)",
+      "title": "Cisco CCNA: Certified Network Associate",
       "year": "Năm đạt: 2022"
     },
     {
-      "icon": "💻",
-      "title": "MCSA: Windows Server 2016",
-      "year": "Năm đạt: 2023"
+      "icon": "🏆",
+      "title": "MCSA: Windows Server",
+      "year": "Năm đạt: 2014"
     },
     {
-      "icon": "⚙️",
-      "title": "ITIL v4 Foundation",
-      "year": "Quản lý dịch vụ CNTT • Năm đạt: 2024"
+      "icon": "🏆",
+      "title": "AI Automation",
+      "year": "Năm đặt: 2026"
     }
   ],
   "contact": {
