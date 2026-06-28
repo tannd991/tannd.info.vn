@@ -140,16 +140,28 @@
   ],
   "portfolio": [
     {
-      "imageText": "O365 Migration",
-      "title": "Di cư Hệ thống Email lên Microsoft 365 (O365 Migration)",
+      "imageText": "Mail-Server Migration",
+      "title": "Chuyển đổi hệ thống Mail [Google Workspace-O365]",
       "role": "Vai trò: Thành viên cốt lõi phụ trách lập kế hoạch & hỗ trợ",
-      "description": "Chuyển đổi thành công hơn 150 tài khoản email từ Mail Server vật lý cũ lên Cloud Microsoft 365 mà không làm gián đoạn luồng gửi/nhận thư của doanh nghiệp. Hướng dẫn và cấu hình Outlook, Teams trên máy tính và điện thoại cho nhân sự."
+      "description": "Chuyển đổi thành công hơn 200 tài khoản email từ Mail Google WorkSpace sang hệ thống Mail Microsoft 365 mà không làm gián đoạn luồng gửi/nhận thư của doanh nghiệp. Hướng dẫn và cấu hình Outlook, OneDrive, SharePoint, MS Teams trên máy tính và điện thoại cho người dùng."
     },
     {
-      "imageText": "Jira Service Desk",
+      "imageText": "IT Service Desk",
       "title": "Tối ưu hóa Quy trình Quản lý Sự cố IT",
       "role": "Vai trò: Trưởng nhóm dự án",
-      "description": "Thiết kế lại quy trình tiếp nhận sự cố bằng công cụ Jira Service Desk. Phân loại sự cố theo mức độ ưu tiên (P1 to P4) rõ ràng, giúp giảm thời gian chờ đợi xử lý của người dùng xuống 30% và nâng cao tính minh bạch công việc phòng IT."
+      "description": "Thiết kế lại quy trình tiếp nhận sự cố bằng công cụ Service Desk nội bộ. Phân loại sự cố theo mức độ ưu tiên (P1 to P4) rõ ràng, giúp giảm thời gian chờ đợi xử lý của người dùng xuống 30% và nâng cao tính minh bạch công việc phòng IT. Tự động xuất Dardboard mail báo cáo tự động theo lịch."
+    },
+    {
+      "imageText": "IT Asset management",
+      "title": "Quản lý kiểm kê tài sản CNTT và Hánh chính",
+      "role": "",
+      "description": ""
+    },
+    {
+      "imageText": "AI ChatBot & Automation",
+      "title": "Tự động hóa quy trình làm việc CNTT",
+      "role": "",
+      "description": ""
     }
   ],
   "education": {
