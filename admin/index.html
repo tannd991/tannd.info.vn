@@ -9,6 +9,7 @@
     :root {
       --bg: #0a0a0a;
       --card: #141414;
+      --card-hover: #1c1c1c;
       --text: #ededed;
       --muted: #a1a1aa;
       --border: #27272a;
@@ -100,6 +101,7 @@
       cursor: pointer;
       border: none;
       transition: all 0.2s;
+      gap: 8px;
     }
     .btn-primary {
       background: var(--text);
@@ -115,26 +117,29 @@
     }
     .btn-outline:hover {
       border-color: var(--muted);
+      background: rgba(255,255,255,0.05);
+    }
+    .btn-danger {
+      background: transparent;
+      border: 1px solid var(--danger);
+      color: var(--danger);
+    }
+    .btn-danger:hover {
+      background: rgba(239, 68, 68, 0.1);
+    }
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 0.85rem;
     }
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
     }
-    .json-editor {
-      width: 100%;
-      height: 600px;
-      font-family: 'Consolas', 'Courier New', monospace;
-      font-size: 14px;
-      line-height: 1.5;
-      background: #000;
-      border: 1px solid var(--border);
-      color: #00ff00;
-      padding: 20px;
-      border-radius: var(--radius);
-      white-space: pre;
-      overflow-wrap: normal;
-      overflow-x: auto;
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
     }
     #app-content {
       display: none;
@@ -154,6 +159,7 @@
       transform: translateY(100px);
       opacity: 0;
       transition: all 0.3s;
+      z-index: 1000;
     }
     .toast.show {
       transform: translateY(0);
@@ -175,12 +181,75 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
-    .badge {
-      font-size: 0.75rem;
-      padding: 2px 6px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 4px;
-      margin-left: 8px;
+
+    /* Tabs Styling */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .tab-btn {
+      padding: 10px 16px;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: 0.2s;
+    }
+    .tab-btn:hover {
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+    }
+    .tab-btn.active {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Dynamic Lists */
+    .dynamic-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .dynamic-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      position: relative;
+    }
+    .dynamic-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .dynamic-item-title {
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .helper-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 4px;
+      display: block;
     }
   </style>
 </head>
@@ -191,7 +260,7 @@
       <h1>Admin <span>Dashboard</span></h1>
       <div id="user-info" style="display: none; align-items: center; gap: 16px;">
         <span style="font-size: 0.9rem; color: var(--muted);" id="repo-display"></span>
-        <button class="btn btn-outline" id="logout-btn" style="padding: 6px 12px; font-size: 0.85rem;">Đăng xuất</button>
+        <button class="btn btn-outline btn-sm" id="logout-btn">Đăng xuất</button>
       </div>
     </header>
 
@@ -199,7 +268,7 @@
     <div id="login-panel" class="panel">
       <div class="panel-title">Đăng nhập GitHub API</div>
       <p style="color: var(--muted); margin-bottom: 24px; font-size: 0.9rem;">
-        Cung cấp thông tin repository và Personal Access Token (PAT) để cho phép Admin lưu nội dung trực tiếp vào file <code>data.json</code> trên GitHub. Vercel sẽ tự động deploy lại sau mỗi lần lưu.
+        Cung cấp thông tin repository và Personal Access Token (PAT) để cho phép Admin lưu nội dung.
       </p>
       <div class="grid-2">
         <div class="form-group">
@@ -224,14 +293,132 @@
 
     <!-- Main Content Panel -->
     <div id="app-content">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <p style="color: var(--muted);">Chỉnh sửa trực tiếp dữ liệu dạng JSON. Đảm bảo đúng cú pháp (không thừa dấu phẩy, dùng ngoặc kép).</p>
-        <button class="btn btn-primary" id="save-btn">Lưu thay đổi & Deploy</button>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <div class="tabs">
+          <button class="tab-btn active" data-target="tab-general">Thông tin chung</button>
+          <button class="tab-btn" data-target="tab-hero">Trang chủ & Giới thiệu</button>
+          <button class="tab-btn" data-target="tab-experience">Kinh nghiệm</button>
+          <button class="tab-btn" data-target="tab-skills">Kỹ năng & Học vấn</button>
+          <button class="tab-btn" data-target="tab-portfolio">Dự án</button>
+        </div>
+        <button class="btn btn-primary" id="save-btn" style="white-space: nowrap; margin-bottom: 24px;">Lưu & Deploy</button>
       </div>
       
-      <div class="panel" style="padding: 0; overflow: hidden;">
-        <textarea id="json-editor" class="json-editor" spellcheck="false"></textarea>
-      </div>
+      <form id="data-form">
+        <!-- TAB 1: Thông tin chung -->
+        <div id="tab-general" class="tab-content active panel">
+          <div class="panel-title">Cài đặt Website (Site Meta)</div>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Tiêu đề trang (SEO Title)</label>
+              <input type="text" id="meta-title" name="siteMeta.title">
+            </div>
+            <div class="form-group">
+              <label>Văn bản Footer</label>
+              <input type="text" id="meta-footer" name="siteMeta.footerText">
+            </div>
+            <div class="form-group">
+              <label>Tên Logo</label>
+              <input type="text" id="meta-logo" name="siteMeta.logo">
+            </div>
+            <div class="form-group">
+              <label>Ký tự nổi bật ở Logo</label>
+              <input type="text" id="meta-logoHighlight" name="siteMeta.logoHighlight">
+            </div>
+          </div>
+
+          <div class="panel-title" style="margin-top: 20px;">Thông tin liên hệ</div>
+          <div class="form-group">
+            <label>Lời gọi hành động (Call to Action)</label>
+            <textarea id="contact-desc" name="contact.description" rows="2"></textarea>
+          </div>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="contact-email" name="contact.email">
+            </div>
+            <div class="form-group">
+              <label>Số điện thoại</label>
+              <input type="text" id="contact-phone" name="contact.phone">
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: Trang chủ & Giới thiệu -->
+        <div id="tab-hero" class="tab-content panel">
+          <div class="panel-title">Khung Banner (Hero)</div>
+          <div class="form-group">
+            <label>Huy hiệu (Badge / Chức danh ngắn)</label>
+            <input type="text" id="hero-badge" name="hero.badge">
+          </div>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Họ và chữ lót</label>
+              <input type="text" id="hero-prefix" name="hero.namePrefix">
+            </div>
+            <div class="form-group">
+              <label>Tên (In màu nổi bật)</label>
+              <input type="text" id="hero-highlight" name="hero.nameHighlight">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Đoạn tóm tắt bản thân (Tagline)</label>
+            <textarea id="hero-tagline" name="hero.tagline" rows="3"></textarea>
+          </div>
+
+          <div class="panel-title" style="margin-top: 40px;">Giới thiệu chung (About)</div>
+          <div class="form-group">
+            <label>Đoạn giới thiệu chi tiết</label>
+            <textarea id="about-desc" name="about.description" rows="4"></textarea>
+          </div>
+          <label>Các khối năng lực (Cards)</label>
+          <div id="about-cards-list" class="dynamic-list"></div>
+          <button type="button" class="btn btn-outline btn-sm" onclick="addAboutCard()">+ Thêm khối năng lực</button>
+        </div>
+
+        <!-- TAB 3: Kinh nghiệm -->
+        <div id="tab-experience" class="tab-content panel">
+          <div class="panel-title">Lịch sử Kinh nghiệm làm việc</div>
+          <p class="helper-text" style="margin-bottom: 20px;">Thêm các mốc kinh nghiệm, mô tả công việc (hỗ trợ thẻ HTML như &lt;strong&gt;).</p>
+          <div id="experience-list" class="dynamic-list"></div>
+          <button type="button" class="btn btn-outline btn-sm" onclick="addExperience()">+ Thêm kinh nghiệm</button>
+        </div>
+
+        <!-- TAB 4: Kỹ năng & Học vấn -->
+        <div id="tab-skills" class="tab-content panel">
+          <div class="panel-title">Nhóm Kỹ năng cốt lõi</div>
+          <p class="helper-text" style="margin-bottom: 20px;">Các thẻ kỹ năng (Tags) nên được phân cách bằng dấu phẩy (,).</p>
+          <div id="skills-list" class="dynamic-list"></div>
+          <button type="button" class="btn btn-outline btn-sm" onclick="addSkillGroup()">+ Thêm nhóm kỹ năng</button>
+
+          <div class="panel-title" style="margin-top: 40px;">Học vấn chính quy</div>
+          <div class="grid-3">
+            <div class="form-group">
+              <label>Bằng cấp</label>
+              <input type="text" id="edu-degree" name="education.degree">
+            </div>
+            <div class="form-group">
+              <label>Trường</label>
+              <input type="text" id="edu-school" name="education.school">
+            </div>
+            <div class="form-group">
+              <label>Niên khóa</label>
+              <input type="text" id="edu-years" name="education.years">
+            </div>
+          </div>
+
+          <div class="panel-title" style="margin-top: 40px;">Chứng chỉ chuyên môn</div>
+          <div id="cert-list" class="dynamic-list"></div>
+          <button type="button" class="btn btn-outline btn-sm" onclick="addCert()">+ Thêm chứng chỉ</button>
+        </div>
+
+        <!-- TAB 5: Dự án -->
+        <div id="tab-portfolio" class="tab-content panel">
+          <div class="panel-title">Dự án tiêu biểu</div>
+          <div id="portfolio-list" class="dynamic-list"></div>
+          <button type="button" class="btn btn-outline btn-sm" onclick="addPortfolio()">+ Thêm dự án</button>
+        </div>
+      </form>
     </div>
   </div>
 
