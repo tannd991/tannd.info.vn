@@ -109,9 +109,36 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="portfolio-img">${p.imageText}</div>
             <h3>${p.title}</h3>
             <p style="color: var(--orange); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">${p.role}</p>
-            <p>${p.description}</p>
+            <p class="desc-truncate">${p.description}</p>
+            <span class="read-more-btn">Xem chi tiết &rarr;</span>
           `;
+          
+          // Click event to open modal
+          card.addEventListener('click', () => {
+            const modal = document.getElementById('projectModal');
+            document.getElementById('modalTitle').textContent = p.title;
+            document.getElementById('modalRole').textContent = p.role;
+            document.getElementById('modalDesc').innerHTML = p.description.replace(/\\n/g, '<br>');
+            modal.classList.add('show');
+          });
+
           portfolioGrid.appendChild(card);
+        });
+
+        // Close modal logic
+        const modal = document.getElementById('projectModal');
+        const closeBtn = document.querySelector('.close-modal');
+        
+        if (closeBtn) {
+          closeBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+          });
+        }
+        
+        window.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.remove('show');
+          }
         });
       }
 
