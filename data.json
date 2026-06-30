@@ -125,9 +125,11 @@
       "role": "Chuyên viên Mạng (Networking & IT Helpdesk)",
       "date": "2021 - đến hiện nay 2026",
       "tasks": [
-        "<strong>Quản trị hạ tầng mạng & Bảo mật:</strong> Thiết kế, triển khai và tối ưu hóa hệ thống mạng văn phòng (quy mô 200+ nhân sự). Chia VLAN phòng ban, cấu hình chính sách bảo mật và định tuyến trên Firewall Fortigate, VPN Client-to-Site và Site-to-Site phục vụ cho nhân sự làm việc từ xa kết nối an toàn.",
-        "<strong>Tổ chức hệ thống & Backup:</strong> Quản trị hệ thống Active Directory, phân quyền truy cập File Server theo phòng ban bảo mật. Lập kế hoạch & sao lưu tự động hàng ngày/hàng tuần cho máy chủ & cơ sở dữ liệu quan trọng, định kỳ kiểm tra tính toàn vẹn của dữ liệu backup hàng tháng.",
-        "<strong>Lập kế hoạch & Quản lý:</strong> Thực hiện kế hoạch bảo trì định kỳ (Preventive Maintenance) hệ thống server, UPS, switch/router hàng quý, giúp giảm thiểu 95% thời gian gián đoạn hệ thống. Xây dựng tài liệu quy trình vận hành SOPs cho phòng IT và tài liệu hướng dẫn người dùng mới."
+        "<strong>Quản trị hạ tầng mạng & Bảo mật: Thiết kế, triển khai và tối ưu hóa hệ thống mạng văn phòng (quy mô 200+ nhân sự). Chia VLAN phòng ban, cấu hình chính sách bảo mật và định tuyến trên Firewall Fortigate, VPN Client-to-Site và Site-to-Site phục vụ cho nhân sự làm việc từ xa kết nối an toàn.",
+        "<strong>Tổ chức hệ thống & Backup:</strong> Quản trị hệ thống Active Directory, phân quyền truy cập File Server/Sharepoint/ShareDrive theo phòng ban bảo mật. Lập kế hoạch & sao lưu tự động hàng ngày/hàng tuần cho máy chủ & cơ sở dữ liệu quan trọng, định kỳ kiểm tra tính toàn vẹn của dữ liệu backup hàng tháng. [Chỉ một vài Server được giao]",
+        "<strong>Lập kế hoạch & Quản lý:</strong> Thực hiện kế hoạch Monitoring, bảo trì định kỳ (Preventive Maintenance) server, UPS, switch/router hàng quý, giúp giảm thiểu 95% thời gian gián đoạn hệ thống. Cấp phát tài khoản Domain/Email/License ứng dụng. Xây dựng tài liệu quy trình vận hành SOPs cho phòng IT và tài liệu hướng dẫn người dùng mới.",
+        "<strong>Chuẩn hóa cấu hình máy tính người dùng, tiêu chuẩn đặt tên, mã quản lý phục vụ cho quy trình IT, quản lý yêu cầu người dùng qua hệ thống IT Titket, Quản lý tài sản CNTT.",
+        "<strong>Lập ngân sách dự trù mua sắm dịch vụ hằng năm cho hoạt động CNTT:"
       ]
     },
     {
