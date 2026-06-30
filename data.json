@@ -131,13 +131,16 @@
       ]
     },
     {
-      "company": "Công ty TNHH Giải pháp Dịch vụ XYZ",
-      "role": "Nhân viên IT Helpdesk & Hỗ trợ Kỹ thuật L2",
+      "company": "Bệnh viện Đa Khoa Vạn Phước",
+      "role": "Trưởng phòng kỹ thuật",
       "date": "01/2022 - 05/2024",
       "tasks": [
-        "<strong>Hỗ trợ người dùng (Helpdesk Support):</strong> Tiếp nhận & xử lý trung bình 30-40 ticket mỗi ngày liên quan đến lỗi OS (Windows/macOS), phần mềm (Office 365), kết nối mạng, máy in, tổng đài IP và camera CCTV. CSAT luôn đạt trên 95% và phản hồi/xử lý đáp ứng đúng cam kết SLA.",
-        "<strong>Tổ chức & Quản lý hạ tầng IT:</strong> Quản lý vòng đời thiết bị IT từ mua sắm, cài đặt (cấu hình ảnh hệ điều hành chuẩn - OS Imaging để bàn giao nhanh), cấp phát, bảo hành đến thanh lý. Thiết lập sơ đồ mạng văn phòng, quản lý bản quyền phần mềm đang hoạt động.",
-        "<strong>Lập kế hoạch làm việc:</strong> Lên lịch kiểm tra định kỳ hàng tuần phòng họp trực tuyến (Teams/Zoom Room), camera giám sát, thiết bị Wifi. Đề xuất phương án và lập kế hoạch nâng cấp RAM, SSD cho máy cũ giúp tăng hiệu suất nhân viên và tối ưu chi phí."
+        "<strong>Thiết lập hệ thống mạng LAN, WAN, Wi‑Fi, camera.",
+        "<strong>Thiết lập kết nối giao tiếp máy tính với các thiết bị y tế.",
+        "<strong>Thiết lập VPN [Site-to-site/Client-to-site].",
+        "<strong>Lập ứng dụng quản lý tài sản theo dõi: lịch sử sửa chữa, ghi nhận tình trạng hư hỏng và chi phí sửa chữa. Trên nền tảng web-app.",
+        "<strong>Thiết lập cơ chế Mirroring database MySQL cho hệ thống máy chủ dự phòng và giám sát hoạt động backup database.",
+        "<strong>Xử lý các công văn liên quan đến đơn thuốc/bệnh án điện tử. Vận hành phần mềm khám chữa bệnh HIS."
       ]
     },
     {
