@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
           card.innerHTML = `
             <div class="portfolio-img">${p.imageText}</div>
             <h3>${p.title}</h3>
-            <p style="color: var(--neon); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">${p.role}</p>
+            <p style="color: var(--orange); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">${p.role}</p>
             <p>${p.description}</p>
           `;
           portfolioGrid.appendChild(card);
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="edu-item">
             <h4>${data.education.degree}</h4>
             <p>${data.education.school}</p>
-            <p style="color: var(--neon); font-size: 0.95rem; font-weight: 600; margin-top: 4px;">${data.education.years}</p>
+            <p style="color: var(--orange); font-size: 0.95rem; font-weight: 600; margin-top: 4px;">${data.education.years}</p>
           </div>
         `;
       }
