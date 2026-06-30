@@ -139,6 +139,15 @@
         "<strong>Tổ chức & Quản lý hạ tầng IT:</strong> Quản lý vòng đời thiết bị IT từ mua sắm, cài đặt (cấu hình ảnh hệ điều hành chuẩn - OS Imaging để bàn giao nhanh), cấp phát, bảo hành đến thanh lý. Thiết lập sơ đồ mạng văn phòng, quản lý bản quyền phần mềm đang hoạt động.",
         "<strong>Lập kế hoạch làm việc:</strong> Lên lịch kiểm tra định kỳ hàng tuần phòng họp trực tuyến (Teams/Zoom Room), camera giám sát, thiết bị Wifi. Đề xuất phương án và lập kế hoạch nâng cấp RAM, SSD cho máy cũ giúp tăng hiệu suất nhân viên và tối ưu chi phí."
       ]
+    },
+    {
+      "company": "Tập đoàn CEN Group – Bất động sản",
+      "role": "Nhân viên IT",
+      "date": "2015 - 2017",
+      "tasks": [
+        "<strong> Xử lý các vấn đề lỗi người dùng gồm phần cứng và ứng dụng.",
+        "<strong> Thiết kế mạng LAN cơ bản cho các chi nhánh mới. Được giao nhiệm vụ: Triển khai dây mạng, đấu nối lắp đặt tổng đài analog, camera IP, wifi, máy chấm công, máy in, scan và switch."
+      ]
     }
   ],
   "portfolio": [
