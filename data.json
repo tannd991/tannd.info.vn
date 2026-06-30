@@ -121,9 +121,9 @@
   ],
   "experience": [
     {
-      "company": "Công ty Cổ phần Công nghệ ABC",
-      "role": "Chuyên viên Quản trị Hệ thống & Mạng (Network & System Admin)",
-      "date": "06/2024 - Hiện tại",
+      "company": "Tập đoàn VAS Group – Thép VAS Nghi Sơn",
+      "role": "Chuyên viên Mạng (Networking & IT Helpdesk)",
+      "date": "2021 - đến hiện nay 2026",
       "tasks": [
         "<strong>Quản trị hạ tầng mạng & Bảo mật:</strong> Thiết kế, triển khai và tối ưu hóa hệ thống mạng văn phòng (quy mô 200+ nhân sự). Chia VLAN phòng ban, cấu hình chính sách bảo mật và định tuyến trên Firewall Fortigate, VPN Client-to-Site và Site-to-Site phục vụ cho nhân sự làm việc từ xa kết nối an toàn.",
         "<strong>Tổ chức hệ thống & Backup:</strong> Quản trị hệ thống Active Directory, phân quyền truy cập File Server theo phòng ban bảo mật. Lập kế hoạch & sao lưu tự động hàng ngày/hàng tuần cho máy chủ & cơ sở dữ liệu quan trọng, định kỳ kiểm tra tính toàn vẹn của dữ liệu backup hàng tháng.",
@@ -133,7 +133,7 @@
     {
       "company": "Bệnh viện Đa Khoa Vạn Phước",
       "role": "Trưởng phòng kỹ thuật",
-      "date": "01/2022 - 05/2024",
+      "date": "2017 - 2021",
       "tasks": [
         "<strong>Thiết lập hệ thống mạng LAN, WAN, Wi‑Fi, camera.",
         "<strong>Thiết lập kết nối giao tiếp máy tính với các thiết bị y tế.",
