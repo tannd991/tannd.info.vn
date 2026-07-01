@@ -105,11 +105,15 @@ document.addEventListener('DOMContentLoaded', () => {
         data.portfolio.forEach(p => {
           const card = document.createElement('div');
           card.className = 'card';
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = p.description;
+          const plainText = tempDiv.textContent || tempDiv.innerText || "";
+          
           card.innerHTML = `
             <div class="portfolio-img">${p.imageText}</div>
             <h3>${p.title}</h3>
             <p style="color: var(--orange); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">${p.role}</p>
-            <p class="desc-truncate">${p.description}</p>
+            <p class="desc-truncate" style="margin-bottom: 0;">${plainText}</p>
             <span class="read-more-btn">Xem chi tiết &rarr;</span>
           `;
           
